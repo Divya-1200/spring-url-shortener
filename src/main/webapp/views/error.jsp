@@ -60,7 +60,7 @@ body {
         	<div class="text-center pb-2">
             	<h2>Error occured.Try again</h2>
             
-            	
+            	<p>${msg}</p>
             </div>
    			<a href="/">
 				<button type="submit" class="btn btn-primary btn-block confirm-button">Go back</button>

@@ -141,9 +141,9 @@ body {
   <a class="navbar-brand" href="/my/page">Tiny URL</a>
   
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav navbar-dark">
      
-      <a class="nav-item nav-link" href="/signup">Sign up</a>
+      <a class="nav-item nav-link" href="/">Home</a>
       <a class="nav-item nav-link" href="/login">Login</a>
       
     </div>
@@ -151,38 +151,33 @@ body {
 </nav>
 <div class="container-fluid">
   <div class="row no-gutter">
-    	
+
         <div class="container pt-5">
           <div class="row">
             <div class="text-center mx-auto">
-              <h3 class="login-heading mb-4">Make a Tiny Url</h3>
-              <form action="post" method="post">
-               <label for="inputEmail">Enter the url</label>
+              <h3 class="login-heading mb-4">Registration Page</h3>
+              <form action="/signup/form" method="post">
+               <label for="inputEmail">Username</label>
                 <div class="form-label-group">
                  
-                  <input type="text" id="inputEmail" class="form-control" name="urlName" placeholder="url" autocomplete="off" required >
+                  <input type="text" id="inputEmail" class="form-control" name="name" placeholder="Username" autocomplete="off" required >
                   
                 </div>
-                <label for="inputEmail">Get your tiny Url</label>
+                <label for="inputEmail">Password</label>
                 <div class="form-label-group">
-                  <input type="text" id="myInput" class="form-control" value="${msg}" placeholder="url">
+                  <input type="password" id="myInput" class="form-control" name="password" placeholder="password">
                   
                   
                 </div>
                 	
-                	<div class="pt-2 pb-2" ">
                 
-					<!-- The button used to copy the text -->
-						<button class="btn-copy" onclick="myFunction()"><i class="fa fa-copy" style="font-size:18px"></i></button>
-					</div>
                 
-                	<button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Get url</button>
+                	<button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Register</button>
                 
                   
               </form>
             </div>
           </div>
-         
         </div>
 
 </div>

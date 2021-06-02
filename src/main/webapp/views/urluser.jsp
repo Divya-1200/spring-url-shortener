@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
 }
 
 body {
-  background-image: url('https://source.unsplash.com/OG44d93iNJk/600x1200');
+  
   background-size: cover;
   background-position: center;
   font-family: 'Noto Sans JP', sans-serif;
@@ -141,22 +142,22 @@ body {
   <a class="navbar-brand" href="/my/page">Tiny URL</a>
   
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav navbar-dark">
      
-      <a class="nav-item nav-link" href="/signup">Sign up</a>
-      <a class="nav-item nav-link" href="/login">Login</a>
+      <a class="nav-item nav-link" href="/my/page">Home</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
       
     </div>
   </div>
 </nav>
 <div class="container-fluid">
   <div class="row no-gutter">
-    	
+
         <div class="container pt-5">
           <div class="row">
             <div class="text-center mx-auto">
               <h3 class="login-heading mb-4">Make a Tiny Url</h3>
-              <form action="post" method="post">
+              <form action="/user/post" method="post">
                <label for="inputEmail">Enter the url</label>
                 <div class="form-label-group">
                  
@@ -180,9 +181,36 @@ body {
                 
                   
               </form>
-            </div>
-          </div>
+           </div> 
+           </div>
+           <c:if test="${inf != null}">
+            <div class="col-12">
+        <table class="table table-striped">
+            
+            <thead>
+                <tr class="tr tr-success">
+                    
+                    <td>ShortUrl</td>
+                    <td>Original url</td>
+                </tr>   
+            </thead>
+            <tbody>
+                <c:forEach items="${inf}" var="temp">
+                    <tr>
+                    
+                        
+                        <td><a href="${temp.shorturl}">${temp.shorturl}</a></td>
+    					<td><a href="${temp.url}">${temp.url}</a></td>
+                        
+                        
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </div>
+    </c:if>
          
+          </div>
         </div>
 
 </div>
